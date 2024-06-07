@@ -22,5 +22,8 @@ Route::get('/news', function () {
 })->name("news");
 
 Route::get('/products', function () {
-    return view('products');
+    $products = config("db.pasta");
+    // Per debuggare uso dd
+    // dd($products);
+    return view('products', compact('products'));
 })->name("products");
